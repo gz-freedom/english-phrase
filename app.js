@@ -16,12 +16,14 @@ app.set('view engine', 'ejs');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get("/", (req, res) => {
-    var cursor = db.collection('phrases').find();
-    cursor.toArray((err, result) => {
+app.get('/', (req, res) => {
+    db.collection('phrases').find().toArray((err, result) => {
         if(err) return console.log(err);
         res.render('index.ejs', { phrases: result });
     });
+});
+app.get('/add-phrase', (req, res) => {
+    res.render('add-phrase.ejs');
 });
 
 app.post('/phrase', (req, res) => {
