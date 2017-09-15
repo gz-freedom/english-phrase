@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
+const path = require('path');
 const MongoClient = require('mongodb').MongoClient;
 var db;
 
@@ -15,6 +16,8 @@ MongoClient.connect('mongodb://127.0.0.1:27017/phrase', (err, database) => {
 app.set('view engine', 'ejs');
 
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'node_modules')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
     db.collection('phrases').find().toArray((err, result) => {

@@ -4,14 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Add Phrase</title>
+    <link rel="stylesheet" href="./bootstrap/dist/css/bootstrap.min.css">
+    <link href="./css/style.css" rel="stylesheet">
 </head>
 <body>
-    <form action="/phrase" method="POST">
-        <input type="text" name="phrase"/>
-        <input type="text" name="explains"/>
-        <input type="text" name="example"/>
-        <button type="submit">Submit</button>
-    </form>
+    <div class="container-fluid">
+        <div class="form-box">
+            <div class="header">
+                <h1>Add Form</h1>
+            </div>
+            <form action="/phrase" method="POST">
+                <ul class="input-list list-unstyled">
+                    <li class="form-group">
+                        <label>Title</label>
+                        <input type="text" name="phrase" class="form-control" />
+                    </li>
+                    <li class="form-group">
+                        <label>explains</label>
+                        <input type="text" name="explains" class="form-control" />
+                    </li>
+                    <li class="form-group">
+                        <label>example</label>
+                        <textarea class="form-control" name="example"></textarea>
+                    </li>
+                    <li class="form-group">
+                        <button class="btn btn-warning pull-right" type="submit">Submit</button>
+                    </li>
+                  </ul>
+            </form>
+        </div>
+    </div>
 </body>
 </html>

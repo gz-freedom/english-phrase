@@ -1,0 +1,17 @@
+body {
+    background-color: #0199bf;
+}
+.form-box {
+    color: #fff;
+    max-width: 600px;
+    margin: auto;
+    padding: 0 20px;
+}
+.form-box .header {
+    border-bottom: #fff solid 1px;
+    margin-top: 15%;
+    margin-bottom: 10%;
+}
+.input-list {
+    margin-top: 10px;
+}
