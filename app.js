@@ -34,6 +34,6 @@ app.post('/phrase', (req, res) => {
         if(err) return console.log(err);
 
         console.log('saved to database');
-        res.redirect('/');
+        res.redirect('/add-phrase');
     });
 });

@@ -4,17 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Learn English Phrase</title>
+    <title>Learn English Phrases</title>
+    <link rel="stylesheet" href="./bootstrap/dist/css/bootstrap.min.css">
+    <link href="./css/style.css" rel="stylesheet">
 </head>
 <body>
-    <ul class="phrases">
-        <% for(var i=0; i<phrases.length; i++) {%>
-        <li class="phrase">
-            <span><%= phrases[i].phrase %></span>
-            <span><%= phrases[i].explains %></span>
-            <span><%= phrases[i].example %></span>
-        </li>
-        <% } %>
-    </ul>
+    <div class="container-fluid">
+        <div class="index-page">
+            <h1 class="display-1 text-center">My Phrases</h1>
+            <div class="btn-nav-wrap text-center">
+                <ul class="btn-group btn-nav-mode">
+                    <button class="btn btn-warning">List Mode</button>
+                    <button class="btn btn-secondary">Memorize Mode</button>
+                </ul>
+            </div>
+            <!--
+            <div class="list-mode">
+                <ul class="list-phrases list-unstyled">
+                    <% for(var i=0; i<phrases.length; i++) {%>
+                    <li class="phrase">
+                        <h2>
+                            <%= phrases[i].phrase %>
+                        </h2>
+                        <div class="explanations">
+                            <p><%= phrases[i].explains %></p>
+                            <p><%= phrases[i].example %></p>
+                        </div>
+                        <div class="btn-group btn-group-sm">
+                            <button class="btn btn-info">Edit</button>
+                            <button class="btn btn-danger">Delete</button>
+                        </div>
+                    </li>
+                    <% } %>
+                </ul>
+            </div>
+            -->
+            <div class="memorize-mode">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title display-4">Phrase</h2>
+                        <div class="btn-group">
+                            <a href="#" class="btn btn-info">Don't Know</a>
+                            <a href="#" class="btn btn-secondary">Show Me the Explanations</a>
+                            <a href="#" class="btn btn-warning">Remember</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
