@@ -13,14 +13,21 @@
         <div class="index-page">
             <h1 class="display-1 text-center">My Phrases</h1>
             <div class="btn-nav-wrap text-center">
-                <ul class="btn-group btn-nav-mode">
-                    <button class="btn btn-warning">List Mode</button>
-                    <button class="btn btn-secondary">Memorize Mode</button>
+                <ul class="btn-group btn-nav-mode" id="btn-nav-mode">
+                    <button class="btn btn-warning" id="btn-list-mode">List Mode</button>
+                    <button class="btn btn-secondary" id="btn-memorize-mode">Memorize Mode</button>
                 </ul>
             </div>
-            <!--
-            <div class="list-mode">
-                <ul class="list-phrases list-unstyled">
+            <div class="list-mode" id="list-mode">
+                <div class="search-wrap">
+                    <div class="input-group search-phrase">
+                        <input type="text" class="form-control" placeholder="Search for..." aria-label="Search for...">
+                        <span class="input-group-btn">
+                            <button class="btn btn-secondary" type="button">Go!</button>
+                        </span>
+                    </div>
+                </div>
+                <ul class="list-phrases list-unstyled" id="list-phrases">
                     <% for(var i=0; i<phrases.length; i++) {%>
                     <li class="phrase">
                         <h2>
@@ -31,27 +38,30 @@
                             <p><%= phrases[i].example %></p>
                         </div>
                         <div class="btn-group btn-group-sm">
-                            <button class="btn btn-info">Edit</button>
-                            <button class="btn btn-danger">Delete</button>
+                            <button class="btn btn-info btn-edit" data-toggle="modal" data-target="#editModal">Edit</button>
+                            <button class="btn btn-danger btn-delete">Delete</button>
                         </div>
                     </li>
                     <% } %>
                 </ul>
             </div>
-            -->
-            <div class="memorize-mode">
-                <div class="card">
-                    <div class="card-body">
-                        <h2 class="card-title display-4">Phrase</h2>
-                        <div class="btn-group">
-                            <a href="#" class="btn btn-info">Don't Know</a>
-                            <a href="#" class="btn btn-secondary">Show Me the Explanations</a>
-                            <a href="#" class="btn btn-warning">Remember</a>
-                        </div>
+            <div class="memorize-mode" id="memorize-mode">
+                <div class="phrase-card">
+                    <div class="phrase-body">
+                        <h2 class="card-title display-4 text-center">Phrase</h2>
+                        <div class="text-light text-center">点击显示解释及用法</div>
                     </div>
                 </div>
             </div>
+            <div class="page-footer">
+                <p class="text-opacity5 text-center">-- Dev by Jimmy --</p>
+            </div>
         </div>
     </div>
+    <% include ./partials/modals %>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="./bootstrap/js/dist/util.js"></script>
+    <script src="./bootstrap/js/dist/modal.js"></script>
+    <script src="./js/script.js"></script>
 </body>
 </html>

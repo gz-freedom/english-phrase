@@ -1,6 +1,8 @@
 body {
     background-color: #17a2b8;
-    color: #fff;
+}
+.text-opacity5 {
+    opacity: .5;
 }
 
 /* home */
@@ -8,12 +10,29 @@ body {
     width: 600px;
     margin: 20px auto;
 }
+.btn-warning:focus,
+.btn-info:focus,
+.btn-danger:focus,
+.btn-secondary:focus {
+    box-shadow: none;
+}
 .index-page h1 {
     margin-top: 60px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+.list-mode {
+}
+.search-wrap {
+    padding: 0 10% 0 10%;
+}
+.search-phrase {
     margin-bottom: 20px;
 }
 .list-phrases {
     padding: 10px 20px;
+    background-color: #fff;
+    border-radius: 5px;
 }
 .list-phrases .phrase {
     border-bottom: #ccc solid 1px;
@@ -39,11 +58,28 @@ body {
     margin-bottom: 20px;
 }
 
-.list-mode,
 .memorize-mode {
     background-color: #fff;
     border-radius: 5px;
-    color: #333;
+}
+
+.memorize-mode {
+    position: relative;
+    padding-bottom: 80px;
+    padding-top: 80px;
+    display: none;
+}
+.memorize-mode .card-title {
+    color: #17a2b8;
+}
+.memorize-mode .btn-action {
+    position: absolute;
+    bottom: 0;
+}
+.page-footer {
+    padding-top: 20px;
+    padding-bottom: 50px;
+    color: #fff;
 }
 
 /* add phrase */
@@ -51,12 +87,16 @@ body {
     max-width: 600px;
     margin: auto;
     padding: 0 20px;
+    color: #fff;
+    position: relative;
 }
 .form-box .header {
-    border-bottom: #fff solid 1px;
     margin-top: 15%;
     margin-bottom: 10%;
 }
 .input-list {
     margin-top: 10px;
+}
+.text-save-success {
+    float: left;
 }
